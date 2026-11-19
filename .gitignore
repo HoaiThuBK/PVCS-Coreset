@@ -1,0 +1,18 @@
+cat > .gitignore << 'EOF'
+# Data & checkpoints
+data_*/
+results_*/
+*.pt
+*.mat
+*.npz
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+env/
+
+# macOS
+.DS_Store
+EOF
