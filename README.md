@@ -18,9 +18,11 @@ candidate that most reduces the maximum distance from every point to its
 (Paul et al., "Deep Learning on a Data Diet", NeurIPS 2021).
 - `geometry_baseline.py`-  Set of geometry method for coreset selection, include: Herding, K-Center.
 - `gradmatch.py`-  Coreset selection algorithm based on GradMatch.
-- `pvcs_coreset.py` - Pairwise Vector-based Coreset Selection: Project class-pair gradients onto the inter-centroid direction; 
-select boundary and centroid-proximal points (Our proposed)
 - `random_selector.py` — uniform random per-class coreset baseline.
+- `pvcs_coreset.py` — Pairwise Vector-based Coreset Selection (ours): project class-pair
+  gradients onto the inter-centroid direction, then retain extreme (hardest, most
+  class-confusable) and core (most confident) samples, completed by representative random
+  samples. Contains BVS (Algorithm 1, per-pair primitive) and PVCS (Algorithm 2, multi-class wrapper).
 
 **Shared infrastructure.**
 - `coreset_selector.py` — `CoresetSelector`, a dispatcher class that wraps all
