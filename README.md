@@ -49,15 +49,12 @@ candidate that most reduces the maximum distance from every point to its
 - `train_resnet20_cifar10.py` — ResNet-20 on CIFAR-10 (10 classes).
 - `train_resnet20_svhn.py` — ResNet-20 on SVHN (10 classes).
 - `train_resnet20_cifar100.py` — ResNet-20 on CIFAR-100 (100 classes).
-
-
-Each driver follows the same loop: warm up on the full dataset for
+- Each driver follows the same loop: warm up on the full dataset for
 `--warmup_epochs` epochs, then every `--update_freq` epochs re-select the
 coreset with the chosen method and train on it (weighted loss) until the next
 update. Per-epoch metrics (`loss`, `accuracy`, `lr`, `train_time_s`,
 `selection_time_s`, `coreset_size`) are appended to a CSV file as training
-proceeds.
-(Note: If the warm-up file already exists, it will be automatically reloaded and shared by all methods. If it doesn't exist, the warm-up will start from the first epoch. The warm-up file is not used for `method="full_dataset"`.)
+proceeds. (Note: If the warm-up file already exists, it will be automatically reloaded and shared by all methods. If it doesn't exist, the warm-up will start from the first epoch. The warm-up file is not used for `method="full_dataset"`.)
 ---
 
 ## 2. Requirements
